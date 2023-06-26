@@ -7,6 +7,12 @@ WORKDIR /app
 # Copy the source code
 COPY . .
 
+# Change the ownership of the working directory to a non-root user
+RUN chown -R 1000:1000 /app
+
+# Switch to a non-root user
+USER 1000
+
 # Restore dependencies and build the application
 RUN dotnet restore
 RUN dotnet publish -c Release -o out

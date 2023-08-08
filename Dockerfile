@@ -27,7 +27,7 @@ RUN chown -R 1000:1000 /app
 USER 1000
 
 # Expose the port
-EXPOSE 80
+EXPOSE 8080
 
 # Set the entry point for the container
 ENTRYPOINT ["dotnet", "YourAppName.dll"]
